@@ -19,6 +19,10 @@ describe: 项目概述
 
 在线地址:[https://crazymryan.github.io/blog](https://crazymryan.github.io/blog)
 
+国内访问:[http://crazy.lovemysoul.vip/blogtest](http://crazy.lovemysoul.vip/blogtest) 
+
+注意：（因为自己的服务器域名马上要过期了，我就懒得再去配置一个 gitalk 了，所以国内访问不携带评论功能。等有时间了在不上来）
+
 ## 安装
 
 ```bash
