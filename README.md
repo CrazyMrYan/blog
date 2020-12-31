@@ -42,12 +42,24 @@ yarn dev
 
 ## 打包静态
 在打包之前你需要配置 `.vitepress` > `config.js` 中加上 base:'你的存放文件名'
+```diff
+let config = {
+    head:[...],
+    title:'悲伤日记',
+    themeConfig:{...},
+    dest: 'public',
++   base:'你的存放文件名'
+}
+```
+
 
 还需要在 `.vitepress` > `build` > `index.js` 修改 type 为 `build` 
 
 ```diff
+- const type = 'dev'
 + const type = 'build'
 export function Build(){
+-    return type === 'build' ? '' : ''
 +    return type === 'build' ? '你的存放文件名' : ''
 }
 ```

@@ -10,7 +10,7 @@
       <div class="title">
         {{ article.frontMatter.title || "" }}
       </div>
-      <time datetime="2020-10-25" class="time">
+      <time :datetime="article.frontMatter.date" class="time">
         {{ article.frontMatter.date || "" }}
       </time>
     </div>

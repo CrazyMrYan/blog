@@ -31,7 +31,7 @@ async function getConfig() {
       ],
     },
     dest: "public",
-    base:'/blog/'
+    // base:'/blog/'
   };
   return config;
 }
