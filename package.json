@@ -1,0 +1,19 @@
+{
+  "name": "vitePress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx vitepress build",
+    "dev": "npx vitepress"
+  },
+  "devDependencies": {
+    "globby": "^11.0.1",
+    "gray-matter": "^4.0.2",
+    "mz": "^2.7.0",
+    "vitepress": "^0.7.2"
+  },
+  "dependencies": {
+    "gitalk": "^1.7.0"
+  }
+}

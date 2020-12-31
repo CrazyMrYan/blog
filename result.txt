@@ -1,0 +1,495 @@
+vitePress
+├─.DS_Store
+├─.gitignore
+├─deploy.sh
+├─docs.md
+├─index.md
+├─package.json
+├─tags.md
+├─yarn.lock
+├─public
+|   └.nojekyll
+├─docs
+|  ├─.DS_Store
+|  ├─mac.md
+|  ├─note
+|  ├─jotting
+|  |    └talkLove.md
+|  ├─book
+|  |  ├─homeBook.md
+|  |  ├─lifeFairy.md
+|  |  └sixLife.md
+├─.vitepress
+|     ├─.DS_Store
+|     ├─config.js
+|     ├─utils
+|     |   └pages.js
+|     ├─theme-default
+|     |       ├─.DS_Store
+|     |       ├─Layout.vue
+|     |       ├─NotFound.vue
+|     |       ├─config.js
+|     |       ├─index.js
+|     |       ├─utils.js
+|     |       ├─styles
+|     |       |   ├─code.css
+|     |       |   ├─custom-blocks.css
+|     |       |   ├─layout.css
+|     |       |   └vars.css
+|     |       ├─composables
+|     |       |      ├─.DS_Store
+|     |       |      └activeSidebarLink.js
+|     |       ├─components
+|     |       |     ├─.DS_Store
+|     |       |     ├─Home.vue
+|     |       |     ├─NavBar.js
+|     |       |     ├─NavBar.vue
+|     |       |     ├─NavBarLink.js
+|     |       |     ├─NavBarLink.vue
+|     |       |     ├─NavBarLinks.js
+|     |       |     ├─NavBarLinks.vue
+|     |       |     ├─NavDropdownLink.js
+|     |       |     ├─NavDropdownLink.vue
+|     |       |     ├─NextAndPrevLinks.js
+|     |       |     ├─NextAndPrevLinks.vue
+|     |       |     ├─Page.vue
+|     |       |     ├─PageEdit.js
+|     |       |     ├─PageEdit.vue
+|     |       |     ├─SideBar.js
+|     |       |     ├─SideBar.vue
+|     |       |     ├─ToggleSideBarButton.vue
+|     |       |     ├─icons
+|     |       |     |   └OutboundLink.vue
+|     ├─theme
+|     |   ├─index.js
+|     |   ├─components
+|     |   |     ├─Comment.vue
+|     |   |     ├─Docs.vue
+|     |   |     └Tags.vue
+|     ├─dist
+|     |  ├─.nojekyll
+|     |  ├─docs.html
+|     |  ├─index.html
+|     |  ├─tags.html
+|     |  ├─docs
+|     |  |  ├─mac.html
+|     |  |  ├─jotting
+|     |  |  |    └talkLove.html
+|     |  |  ├─book
+|     |  |  |  ├─homeBook.html
+|     |  |  |  ├─lifeFairy.html
+|     |  |  |  └sixLife.html
+|     |  ├─_assets
+|     |  |    ├─app.68caf779.js
+|     |  |    ├─common-d6bd45c0.js
+|     |  |    ├─docs.md.1e229ab3.js
+|     |  |    ├─docs.md.1e229ab3.lean.js
+|     |  |    ├─docs_book_homeBook.md.751cc1b8.js
+|     |  |    ├─docs_book_homeBook.md.751cc1b8.lean.js
+|     |  |    ├─docs_book_lifeFairy.md.0e816f88.js
+|     |  |    ├─docs_book_lifeFairy.md.0e816f88.lean.js
+|     |  |    ├─docs_book_sixLife.md.9a93c978.js
+|     |  |    ├─docs_book_sixLife.md.9a93c978.lean.js
+|     |  |    ├─docs_jotting_talkLove.md.a0cba9c6.js
+|     |  |    ├─docs_jotting_talkLove.md.a0cba9c6.lean.js
+|     |  |    ├─docs_mac.md.ef6131f7.js
+|     |  |    ├─docs_mac.md.ef6131f7.lean.js
+|     |  |    ├─index.md.6ac8e7ec.js
+|     |  |    ├─index.md.6ac8e7ec.lean.js
+|     |  |    ├─style.25a7df6e.css
+|     |  |    ├─tags.md.4b813a83.js
+|     |  |    └tags.md.4b813a83.lean.js
+|     |  ├─.git
+|     |  |  ├─COMMIT_EDITMSG
+|     |  |  ├─HEAD
+|     |  |  ├─config
+|     |  |  ├─description
+|     |  |  ├─index
+|     |  |  ├─refs
+|     |  |  |  ├─tags
+|     |  |  |  ├─heads
+|     |  |  |  |   └master
+|     |  |  ├─objects
+|     |  |  |    ├─pack
+|     |  |  |    ├─info
+|     |  |  |    ├─f4
+|     |  |  |    | └91fd888d3c4109e510be12772ac7cf5c98f750
+|     |  |  |    ├─f1
+|     |  |  |    | └3738935b4cb95c1a7fbce99f55ec0ef88d7bed
+|     |  |  |    ├─f0
+|     |  |  |    | └9c553cf86f62679df6de4a20724ce48f76e7e0
+|     |  |  |    ├─ea
+|     |  |  |    | ├─908edb95eeb2ea16d2a921d2c501be16481c49
+|     |  |  |    | └9cb9e66ef421b75640d3bf0c333f64d1facff1
+|     |  |  |    ├─e6
+|     |  |  |    | └9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+|     |  |  |    ├─de
+|     |  |  |    | └8c06df027ce8f4f6f0f8c27e7ec8087ab2408a
+|     |  |  |    ├─d6
+|     |  |  |    | └7091d23d87a95e964140ce1b2335d851b07af4
+|     |  |  |    ├─c7
+|     |  |  |    | └01c1823b617c495da4dc228c69c7097c3e65c0
+|     |  |  |    ├─bf
+|     |  |  |    | └900dc9aeece46be6df3890248b0921fec55cf6
+|     |  |  |    ├─b2
+|     |  |  |    | └8ae131bcb0202bffab87af8de93cb035fbcc6e
+|     |  |  |    ├─a2
+|     |  |  |    | └d2fcd8e06e8a226412cde314b5066a909984b9
+|     |  |  |    ├─a0
+|     |  |  |    | └7d02b76ba444ff4b16af06fb683cc2915aaf18
+|     |  |  |    ├─9c
+|     |  |  |    | └d9abf517debcd94f0565e9e80c2d8350e1f7fc
+|     |  |  |    ├─90
+|     |  |  |    | └93bed793842c6d3d3ad7076248c6e1bc426b78
+|     |  |  |    ├─79
+|     |  |  |    | └bdf71ff9e3eccae23a23ff4016fad9e8ed5258
+|     |  |  |    ├─72
+|     |  |  |    | ├─4aa9a8dc92d8aaf715f2e415205562cb97eb89
+|     |  |  |    | └a1d25bba8d5d9402b6f4eb5b42dda88b59da94
+|     |  |  |    ├─5f
+|     |  |  |    | └576f38fafbaaeecf5bf437d2b03301de0ecf23
+|     |  |  |    ├─52
+|     |  |  |    | └f52c08e968ec789dca380da2534b4dff4ff076
+|     |  |  |    ├─51
+|     |  |  |    | ├─2da918392328db6e8f6258c6763fd318e93f5c
+|     |  |  |    | └b96a00c7b0579e87466fce98f1b7959c3d7903
+|     |  |  |    ├─36
+|     |  |  |    | └2a71eea07ea075edc9689ef91e2f171d2a3d09
+|     |  |  |    ├─2e
+|     |  |  |    | └5a29882debe7044aa7f779d66268acf58ff77a
+|     |  |  |    ├─2c
+|     |  |  |    | └dbde9f5bdee7ea51489314cdd8d83f121dc435
+|     |  |  |    ├─1d
+|     |  |  |    | └01bf51d905d6795f287e9e4c7307b7711dbc44
+|     |  |  |    ├─02
+|     |  |  |    | └7dddb71e665ceb9396737079514d1ffce2538a
+|     |  |  ├─logs
+|     |  |  |  ├─HEAD
+|     |  |  |  ├─refs
+|     |  |  |  |  ├─heads
+|     |  |  |  |  |   └master
+|     |  |  ├─info
+|     |  |  |  └exclude
+|     |  |  ├─hooks
+|     |  |  |   ├─applypatch-msg.sample
+|     |  |  |   ├─commit-msg.sample
+|     |  |  |   ├─fsmonitor-watchman.sample
+|     |  |  |   ├─post-update.sample
+|     |  |  |   ├─pre-applypatch.sample
+|     |  |  |   ├─pre-commit.sample
+|     |  |  |   ├─pre-merge-commit.sample
+|     |  |  |   ├─pre-push.sample
+|     |  |  |   ├─pre-rebase.sample
+|     |  |  |   ├─pre-receive.sample
+|     |  |  |   ├─prepare-commit-msg.sample
+|     |  |  |   └update.sample
+├─.git
+|  ├─COMMIT_EDITMSG
+|  ├─FETCH_HEAD
+|  ├─HEAD
+|  ├─config
+|  ├─description
+|  ├─index
+|  ├─refs
+|  |  ├─tags
+|  |  ├─remotes
+|  |  |    ├─origin
+|  |  |    |   └main
+|  |  ├─heads
+|  |  |   └main
+|  ├─objects
+|  |    ├─pack
+|  |    ├─info
+|  |    ├─ff
+|  |    | └6a809e1519f49b4d5fec32be642de088e517d2
+|  |    ├─fe
+|  |    | └dfd09d09391ae0635b689df3ac0f8f54268785
+|  |    ├─fb
+|  |    | └af97bd4686c80bc271a30943d189048d7255b3
+|  |    ├─fa
+|  |    | ├─afa4d218ffb02d37211de133b76cdff5a0be8a
+|  |    | └d2aab19580bcf4540e381c939da69ee706b274
+|  |    ├─f9
+|  |    | └e314413330c67ca07da88e8ba92f0bba607c04
+|  |    ├─f7
+|  |    | ├─69a366790d3fc8c39efb93f014b3c915b34bc9
+|  |    | └b4542e6a89a1970a4621e0158aef1d1426d38d
+|  |    ├─f6
+|  |    | └6463154fd6f013f088225b06aef001d3604163
+|  |    ├─f5
+|  |    | └d75e239c93db46b0cd4d6a274085a875099181
+|  |    ├─f4
+|  |    | ├─5b705b54c7f185449e83d265055911e1d672fa
+|  |    | └77eba84650f0302034cc0b1112c48b32533b05
+|  |    ├─f2
+|  |    | └443861cb897b98e6f36469104c21a291a74511
+|  |    ├─ef
+|  |    | └0c0e720cdce6568ec40346b55fce99ec49c024
+|  |    ├─ee
+|  |    | └d8fe9e5f3833db6f89efbfa103bba23ba2eb92
+|  |    ├─ed
+|  |    | ├─1ce3f42e8046e727092e97f0d4c7e69a62d125
+|  |    | └c78dd5c7e297ab742ff745374186cad2fa8061
+|  |    ├─ec
+|  |    | └695bf488f63812947b2057d565ecf7205cb459
+|  |    ├─e8
+|  |    | └f9b08c038905e317da59998d54a8e6f0b539f2
+|  |    ├─e6
+|  |    | ├─9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+|  |    | └cd9d23a3a44e8c02ade2ceb0205831fe0f50ee
+|  |    ├─e5
+|  |    | ├─35d3d2be107ab205f14c2daf3f17c5708bc5ff
+|  |    | └727e10c26efddf34bf9def6bae59c4f5034c87
+|  |    ├─e0
+|  |    | └8c60ecd6b7caf7e4138b845209677840444467
+|  |    ├─df
+|  |    | ├─0b763a44019df0622345038ba9e4c68060eeff
+|  |    | └e02fa1b1f8726f0135070136cbfd52d8fd698e
+|  |    ├─de
+|  |    | ├─4dcd61bccb554ae1306437a52ef8dcf788e250
+|  |    | ├─65ccaa17d4fc918637967dd4417f486c4c7b4d
+|  |    | └bb0fe94424fdb7d326fdc00877357686b02c00
+|  |    ├─dd
+|  |    | ├─bb138c1411a64e7ee258f1b9068f49c8724c92
+|  |    | └ed5b975fe7acd5daa7bfdba4442d51c9e022f5
+|  |    ├─dc
+|  |    | └94c0365c72facd370f5ee509ba2acac385c015
+|  |    ├─db
+|  |    | └fe68cd073f7939fb51c37b37c489402a230f21
+|  |    ├─da
+|  |    | ├─45a5fea82ff4e92dbb9b02dd6a5d7f45c6455a
+|  |    | └7d589b789b476e72850c93132629dbf360f89b
+|  |    ├─d8
+|  |    | ├─071040b8b0358db0eff102548b0e987614e02a
+|  |    | └1f44755b83baacea57d101d7750d7848015376
+|  |    ├─d7
+|  |    | └28133ca5850669c57c011fc305f6b8a24da5be
+|  |    ├─d5
+|  |    | └fe3514bae4b881a7426399d24d66fa49af5b69
+|  |    ├─d4
+|  |    | ├─414e2363a1c3394789ac9bb32a0538d745a6fa
+|  |    | └e659ad2c059558c09dc9c8c6aaad72f7e291e0
+|  |    ├─d3
+|  |    | └54cf99450bf2d7df83b97fbe0c09b2203c6ad3
+|  |    ├─ce
+|  |    | ├─2fb5aaa9863e9579dd4993b4d7b9c3595da230
+|  |    | ├─7a0d86118fd2650bc8febde8ed85c62490479e
+|  |    | └fbc27019365bc0b702e48199ac2dc75ba9935f
+|  |    ├─cc
+|  |    | └a31112ed9606c9aab97581a7f35cbe1cc39a95
+|  |    ├─c9
+|  |    | └2d74ff54a1ff6af86e2f9cc1aefa0d014e89b1
+|  |    ├─c8
+|  |    | └ec3388d90fb01896c65c0192780d76ce724c53
+|  |    ├─c5
+|  |    | └cb4807c8b80dd26d3cf8d5c8c62787a2e1196b
+|  |    ├─c3
+|  |    | └f5af2658ac8f69c0e6c02a6cd82dd096468b78
+|  |    ├─c1
+|  |    | └da7c4200bba27afced27c9540f2b504f38b895
+|  |    ├─be
+|  |    | ├─8ce9adb0eeed52269a3dc0b8250363962f6987
+|  |    | └c1b557c45381546d728ec1dab763fe9c927ea8
+|  |    ├─bc
+|  |    | └21d4ad0d2919510568864915a7e88aaed968c6
+|  |    ├─bb
+|  |    | └883c5e37ee829ee052c715eca5db6876f0528e
+|  |    ├─b9
+|  |    | ├─0bbbcdcac6d09c11172c36939e27be3731ed8b
+|  |    | └5bcb33aabeeb880b6fc32dfaaa6e8cd3a4e5ac
+|  |    ├─b8
+|  |    | └3b2a6dacb8b905234e30e2ff4cc52106070237
+|  |    ├─b5
+|  |    | └a2d05e41b4fd38891bba29b5270db6a6d73fdc
+|  |    ├─b3
+|  |    | └0ed2b037287cfd44b58131441b30c4772ee5f0
+|  |    ├─b1
+|  |    | └0bce0282700aa3dd0765ed546e27caef4853a5
+|  |    ├─af
+|  |    | └e01ab251b49b712da88c18d349bca1d9e92695
+|  |    ├─ad
+|  |    | └62914f5cefd403df250b0fda1a7a148dde783b
+|  |    ├─ac
+|  |    | └22ed20747e5d7dc9afdb1919997e55ac90c246
+|  |    ├─a9
+|  |    | └6324f6448c48fc9371cdeb2d0f9d762890bc14
+|  |    ├─a0
+|  |    | └85b2efda75374d806accad2e6fd2cbec4470fb
+|  |    ├─9f
+|  |    | ├─1dc5c7031a02c2b46e068b7d6d035da4e1ae18
+|  |    | └f55b1dc8d91d034773a0b0e9d1fe0c7e90a16c
+|  |    ├─9d
+|  |    | ├─1d5df226879097b2fa9517d115ec4ce9bc0606
+|  |    | └77dbeb34bccf253053009d7101decbe873d12f
+|  |    ├─9a
+|  |    | └4c906322f55e4659d954e59c6b61b8ab4b621e
+|  |    ├─98
+|  |    | └9ae446bad9f79f6569febedf4d2a9c93d4c6cf
+|  |    ├─96
+|  |    | └0feaa8527f38389ef29c55aa16f7db7bbe3839
+|  |    ├─94
+|  |    | └3dbad9669a3688442ed461932532a5a601001b
+|  |    ├─93
+|  |    | └933b349286c2e3ec4570fc2bfd6663d605deb0
+|  |    ├─8e
+|  |    | └1b52b079c6fd390b2328cd2d42554cc51da385
+|  |    ├─8a
+|  |    | └5712973bb010a98852879d9f1a55429f5f65c8
+|  |    ├─88
+|  |    | └f73b7452ff188d3d0aeabdeb009dddb2118610
+|  |    ├─87
+|  |    | └2ddf54311f0c6d846a8cea096a0524ec8ebce6
+|  |    ├─85
+|  |    | └cba91df2d8924bab8463afeaf8f88f02152bdf
+|  |    ├─84
+|  |    | ├─8e741056ad1bde2dc8d250b5a585265251655f
+|  |    | ├─905f712fcc857fb9bff664efe8a0459ec61835
+|  |    | └d720588515d0e610c23831cec89d8fa7bcc43f
+|  |    ├─81
+|  |    | ├─3218b4a02cae6ab64e09108077d4721d7ae895
+|  |    | └e3c550578c3716796d0cc0a61234f082b74050
+|  |    ├─80
+|  |    | └70dedf4003eaf88ef182a11fe776030013ba6c
+|  |    ├─7f
+|  |    | └5dffb76ccd8fed135201358a0b38ac817b390e
+|  |    ├─7e
+|  |    | ├─06682991bd4fa1a79ad250de38cd3fc5b7370b
+|  |    | └e63d968f0213dedfcf6b44e7d38098c746de1f
+|  |    ├─76
+|  |    | └4419f11fe9d122c46e1ff704cd8acf2ce9387c
+|  |    ├─73
+|  |    | ├─24aac9475097460b70d62970eccb1f8defc425
+|  |    | └74a826f680e5b29b17b7843beb3431b062ce67
+|  |    ├─70
+|  |    | ├─67f039aece0701a3fa83725e382770bc95f51a
+|  |    | └b681a9c7b8281d0b56b9b271450a650c7865a4
+|  |    ├─6a
+|  |    | └539c16afadae85876aaf649ab0d601ab336a8f
+|  |    ├─69
+|  |    | └0ab8691b100c13a5654647965e2c4a04fe43bf
+|  |    ├─68
+|  |    | └e66c419314ed458beba5af7b1355fe1f9312b8
+|  |    ├─67
+|  |    | └a8ec7e2b8119b5fda7afdc0de47b55ad17085f
+|  |    ├─64
+|  |    | └bf8b673b12903b64cb9981eef09f9c12058499
+|  |    ├─63
+|  |    | └629323226d719bf1abcb38f3f2e81f4cf69640
+|  |    ├─62
+|  |    | └71aa4f324f908cf4fb8b20a4efd7f9845b7303
+|  |    ├─60
+|  |    | └48e566390baccc1fa7af3a2010596d8633806b
+|  |    ├─58
+|  |    | └d0954f67087ce7cd1c6f9b7529e6dc4834e84d
+|  |    ├─56
+|  |    | ├─2a421806221dd15e9833637ec5205b060ef4a2
+|  |    | └8574c2449b8751bf204ff78ef72202d70c997a
+|  |    ├─55
+|  |    | └cb749efcf6eca4b44af7f2bdf4c6758aa44348
+|  |    ├─54
+|  |    | └877adb2f68550b9e57dc5709d89b2d55f8ffc5
+|  |    ├─53
+|  |    | └9d9e1d7960a2a327744b6fe261d64c2c8990f3
+|  |    ├─4e
+|  |    | ├─26c958b2fce066f29c5fb1e540d3abb7ed1a7b
+|  |    | ├─637713e0e9afa2b3ccb8d2b70f74e5465e4258
+|  |    | └ef3391c2af87a9e83e486df60c4b64c6e45b28
+|  |    ├─4d
+|  |    | ├─4bff4d87584e3c09a78e4ca4595c4faac898c4
+|  |    | └512840b90b0c3cd0c8ae99e13661006c12775b
+|  |    ├─4c
+|  |    | └48839fb83909bea269c77092ac44d58239b786
+|  |    ├─4b
+|  |    | └5d886f9fe5b9356e234a13770f2e271298d2b3
+|  |    ├─49
+|  |    | ├─be77b8a85b8c2e91c40ed86c095171105fdfbf
+|  |    | ├─e0c5639336979cbc43f9ed8f678dee1751fc8c
+|  |    | └eb3bbe3d32a914acd20f788b025f36760c5977
+|  |    ├─46
+|  |    | ├─edce49f9d6682231cdb5522785a16a46171bdc
+|  |    | └ee708476500985520d9e8ad3ab432232d85392
+|  |    ├─45
+|  |    | └60535e87055d4c2bc5bbb1e19357a6df5e9ae4
+|  |    ├─43
+|  |    | └ef20a36ab6fdb2c72d2e6c199f19d52f2606f4
+|  |    ├─42
+|  |    | └74029f6fb3181b34e834c54a533ac4dee5cabd
+|  |    ├─3f
+|  |    | └77907e680db3e4b7ade3824128629221b8e2a3
+|  |    ├─3e
+|  |    | └a50f46b1867ee802a33d21d6559e5bf4a6ccf7
+|  |    ├─3d
+|  |    | └323cc01a30edfec675d3a53cf9bab5cb975d63
+|  |    ├─3c
+|  |    | └3629e647f5ddf82548912e337bea9826b434af
+|  |    ├─3a
+|  |    | └280411b908be2a970b7288965551b90db1c66d
+|  |    ├─39
+|  |    | └66386065e80c600ec73f943ed86107330e6b7d
+|  |    ├─37
+|  |    | └9d03a151bd06cfd1ccebc53ae85533439e87c0
+|  |    ├─36
+|  |    | ├─6a9055644082d096921dbef223fe02766f9520
+|  |    | └9a8393d724282afa1926f8439538d13f64da25
+|  |    ├─34
+|  |    | └dba5df9972d385a14bba42f7e2a25771669f91
+|  |    ├─33
+|  |    | └a5f5af0aeab1251c11c7390c03edc2be964050
+|  |    ├─30
+|  |    | ├─68126a6d704533cd64fae2e44d65bc6dce6405
+|  |    | ├─99fe9de40b84b8817e7b5aeda028ee63c0f5bb
+|  |    | └b6e9abb6c2209938a0555016bcd608d11da37c
+|  |    ├─2d
+|  |    | └61a0655b0ad251fdfb2f7717dd1bf58c3511e4
+|  |    ├─27
+|  |    | └65d39c804ad7390dc1aec9adc4ac467104c4a7
+|  |    ├─26
+|  |    | └d56f676722dfd6b55d4be68eae4d2b07cf5f4e
+|  |    ├─1b
+|  |    | └9b65703e633dbd0033168b3e0d3db151d2456d
+|  |    ├─17
+|  |    | └f9ed6ae4eccb77af2bfde29e42e3afda4f9980
+|  |    ├─16
+|  |    | ├─77d9f11283f864d2fff870a73c8fb1b142f805
+|  |    | └a081e3329155709971b5691c13b427c1b097a6
+|  |    ├─14
+|  |    | ├─3ae4e1bcccf643d862fc51323333d9e0e3ddf8
+|  |    | ├─76de4b58ba300d91030f710e21a0da8ed579cb
+|  |    | └e7a99f114d9992f6a4e04448d59ee87e25dd96
+|  |    ├─13
+|  |    | └0299e249ff5d9a1f9016df30014d5e15be9622
+|  |    ├─12
+|  |    | └28241fff789f83593b3738d5dfffc10567ca68
+|  |    ├─0c
+|  |    | └34ba5803d3936fab341b958ea4a29660dfa59d
+|  |    ├─0a
+|  |    | └71aff23313b84bf46cf8a026a49b5551145d64
+|  |    ├─06
+|  |    | ├─0dbebc9114dceee82c0df0c101c368362409e0
+|  |    | ├─e591161441a0dac1ec98ead2f13e4a12148e3b
+|  |    | └f8ba08b093b20ec734862d0587b0036002429e
+|  |    ├─03
+|  |    | └b44234f008ca27276d4467bd762cc24ae2ce71
+|  ├─logs
+|  |  ├─HEAD
+|  |  ├─refs
+|  |  |  ├─remotes
+|  |  |  |    ├─origin
+|  |  |  |    |   └main
+|  |  |  ├─heads
+|  |  |  |   └main
+|  ├─info
+|  |  └exclude
+|  ├─hooks
+|  |   ├─applypatch-msg.sample
+|  |   ├─commit-msg.sample
+|  |   ├─fsmonitor-watchman.sample
+|  |   ├─post-update.sample
+|  |   ├─pre-applypatch.sample
+|  |   ├─pre-commit.sample
+|  |   ├─pre-merge-commit.sample
+|  |   ├─pre-push.sample
+|  |   ├─pre-rebase.sample
+|  |   ├─pre-receive.sample
+|  |   ├─prepare-commit-msg.sample
+|  |   └update.sample
