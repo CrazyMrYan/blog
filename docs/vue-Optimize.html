@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/blog/_assets/style.71cc2c93.css">
     <link rel="modulepreload" href="/blog/_assets/common-d6bd45c0.js">
     <link rel="modulepreload" href="/blog/_assets/docs_vue-Optimize.md.e220060b.lean.js">
-    <link rel="modulepreload" href="/blog/_assets/app.4df1132c.js">
+    <link rel="modulepreload" href="/blog/_assets/app.23fcf757.js">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="keywords" content="悲伤日记">
     <link rel="icon" href="/favicon.ico">
@@ -98,6 +98,6 @@ plugins<span class="token operator">:</span><span class="token punctuation">[</s
 <span class="token punctuation">]</span>
 </code></pre></div><p>这个环节也有点累，因为页面实在太多了，下面是打包后的效果</p><p><img src="/blog/_assets/image-20201229161643521.6c0a5404.png" alt=""></p><p>我们惊奇的发现 js确实小了挺多，那么这些这些内容去哪了？我们也没有删除啊</p><p><img src="http://ww1.sinaimg.cn/large/6af89bc8gw1f8u55co8s8j205i05b3yb.jpg" alt=""></p><p>在js文件夹中，我们发现了好多个单个js，这是为什么呢？</p><p>因为用 <code>require</code> 会将 <code>component</code> 分别打包成不同的js，按需加载，访问此路由时才会加载这个js，所以就避免进入首页时加载内容过多。</p><p><img src="/blog/_assets/image-20201229162241521.39f36ee4.png" alt=""></p><p>所噶，到此为止我们优化做完了。我们来看看效果吧!</p><p><img src="http://ww1.sinaimg.cn/large/9150e4e5ly1fhbqlltmdij203502ot8k.jpg" alt=""></p><h2 id="结果"><a class="header-anchor" href="#结果" aria-hidden="true">#</a> 结果</h2><p>来看看效果吧！</p><p><img src="/blog/_assets/image-20201229162548701.c8d57e11.png" alt=""></p><p>有些仔细的朋友会发现，这个app.js 与 vendor.js 怎么会变得比刚刚还小呢？</p><p>因为我们得第一步压缩代码里面做了 gzip 压缩</p><p><img src="/blog/_assets/image-20201229162905878.a13fcc63.png" alt=""></p><p>现在首屏打开基本上控制在 1-3s 左右浮动了</p><p>相比之前的 16s 简直不要强太多，PM 与 老板 直呼 “这也太快了！啊啊啊~”</p><p><img src="http://ww4.sinaimg.cn/large/9150e4e5ly1fq6s1rt3zxj20c80c8gly.jpg" alt=""></p><div id="gitalk-container"></div></div><div class="links-wrapper"><div class="prev-link"><!----></div><div class="next-link"><!----></div></div><footer class="page-edit"><!----></footer><!--[--><!--[--><!--]--><!--]--></div></main></div><!----><!--]--></div>
     <script>__VP_HASH_MAP__ = JSON.parse("{\"docs.md\":\"6b093fe9\",\"index.md\":\"be620e42\",\"README.md\":\"424ff87c\",\"tags.md\":\"e8b291f1\",\"docs_svelte-Study.md\":\"527bfa13\",\"docs_vue-Optimize.md\":\"e220060b\",\"docs_vue-PlugIn.md\":\"d1c20bfd\",\"docs_vue-Render.md\":\"7995346f\",\"docs_vue-technique.md\":\"ce276a64\",\"docs_vue-TreeColor.md\":\"d38d3b34\"}")</script>
-    <script type="module" async src="/blog/_assets/app.4df1132c.js"></script>
+    <script type="module" async src="/blog/_assets/app.23fcf757.js"></script>
   </body>
 </html>
