@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      初探 svelte | 悲伤日记
+    </title>
+    <meta name="description" content="A VitePress site">
+    <link rel="stylesheet" href="/_assets/style.71cc2c93.css">
+    <link rel="modulepreload" href="/_assets/common-d6bd45c0.js">
+    <link rel="modulepreload" href="/_assets/docs_svelte-Study.md.527bfa13.lean.js">
+    <link rel="modulepreload" href="/_assets/app.20e0090b.js">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="keywords" content="悲伤日记">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="no-sidebar theme"><header class="navbar"><!--[--><a class="title" aria-label="悲伤日记, back to home" href="/"><!----><span>悲伤日记</span></a><div class="flex-grow"></div><nav class="nav-links hide-mobile"><!--[--><!--[--><div class="nav-item"><a class="nav-link" href="/" target="" rel="">首页 <!----></a></div><!--]--><!--[--><div class="nav-item"><a class="nav-link" href="/docs" target="" rel="">归档 <!----></a></div><!--]--><!--[--><div class="nav-item"><a class="nav-link" href="/tags" target="" rel="">分类 <!----></a></div><!--]--><!--]--><!----><!----></nav><!--[--><!--[--><!--]--><!--]--><!--]--><div class="sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div></header><aside class=""><!--[--><nav class="nav-links show-mobile"><!--[--><!--[--><div class="nav-item"><a class="nav-link" href="/" target="" rel="">首页 <!----></a></div><!--]--><!--[--><div class="nav-item"><a class="nav-link" href="/docs" target="" rel="">归档 <!----></a></div><!--]--><!--[--><div class="nav-item"><a class="nav-link" href="/tags" target="" rel="">分类 <!----></a></div><!--]--><!--]--><!----><!----></nav><!--[--><!--[--><!--]--><!--]--><ul class="sidebar"><!--[--><!--]--></ul><!--[--><!--[--><!--]--><!--]--><!--]--></aside><!-- TODO: make this button accessible --><div class="sidebar-mask"></div><main><div class="content"><!--[--><!--[--><!--]--><!--]--><div class="md-header"><div class="md-title">初探 svelte</div><span id="jinrishici-sentence">正在加载今日诗词....</span><div class="md-date">2020-12-05</div></div><ul class="catalog"><!--[--><li class="catalog-item"><!----><a class="level level-3" href="#说在前面">说在前面</a></li><li class="catalog-item"><!----><a class="level level-3" href="#关于虚拟dom">关于虚拟DOM</a></li><li class="catalog-item"><!----><a class="level level-3" href="#业内大牛如何看待-svelte">业内大牛如何看待 svelte</a></li><li class="catalog-item"><!----><a class="level level-3" href="#关于-ui">关于 UI</a></li><li class="catalog-item"><!----><a class="level level-3" href="#svelte-与其他框架">svelte 与其他框架</a></li><li class="catalog-item"><!----><a class="level level-3" href="#使用-svelte-模板">使用 svelte 模板</a></li><li class="catalog-item"><!----><a class="level level-3" href="#下载依赖">下载依赖</a></li><li class="catalog-item"><!----><a class="level level-3" href="#启动项目">启动项目</a></li><li class="catalog-item"><!----><a class="level level-3" href="#打开页面">打开页面</a></li><li class="catalog-item"><!----><a class="level level-3" href="#安装ui">安装ui</a></li><li class="catalog-item"><!----><a class="level level-3" href="#简单了解语法">简单了解语法</a></li><li class="catalog-item"><!----><a class="level level-3" href="#案例">案例</a></li><li class="catalog-item"><!----><a class="level level-3" href="#注解">注解</a></li><li class="catalog-item"><!----><a class="level level-3" href="#参考文献">参考文献</a></li><!--]--></ul><div><h3 id="说在前面"><a class="header-anchor" href="#说在前面" aria-hidden="true">#</a> 说在前面</h3><p><code>svelte</code> 不知道大家有没有了解过，最近一次偶然刷文章，看到一篇<a href="https://zhuanlan.zhihu.com/p/97825481" target="_blank" rel="noopener noreferrer">《都快2020年，你还没听说过SvelteJS?》</a> [0] 的文章，看了svelte与其他框架的对比</p><p><a href="https://www.firecat.run/" target="_blank" rel="noopener noreferrer">svelte 中文 doc</a> [1]</p><p>对比各框架开发的项目的尺寸</p><p><img src="/_assets/1.78fa0e8d.jpg" alt="对比各框架开发的项目的尺寸"></p><p>对比各项目的 Lighthouse 性能评分</p><p><img src="/_assets/640.913962fe.jpg" alt="对比各项目的 Lighthouse 性能评分"></p><p>说实话属实有点惊讶到我。 ** 真的假的？</p><p>于是我抱着试试就试试的心态来做个评测人</p><h3 id="关于虚拟dom"><a class="header-anchor" href="#关于虚拟dom" aria-hidden="true">#</a> 关于虚拟DOM</h3><p>svelte 的作者 Rich Harris 在一篇名为<a href="https://svelte.dev/blog/virtual-dom-is-pure-overhead" target="_blank" rel="noopener noreferrer">《虚拟DOM纯粹是开销》</a> [2] 的文章中指出，为什么不使用虚拟dom</p><p>虚拟dom的三个步骤</p><ol><li>两个快照都包含一个元素。在两种情况下都是<code>&lt;div&gt;</code>，这意味着我们可以保留相同的DOM节点</li><li>我们列举了新旧属性上的所有属性，<code>&lt;div&gt;</code>以查看是否需要更改，添加或删除任何属性。在这两种情况下，我们都有一个属性-a<code>className</code>的值为<code>&quot;greeting&quot;</code></li><li>下降到元素中，我们看到文本已更改，因此我们需要更新真实的DOM</li></ol><p>而 svelte 直接跳过前面两步，直接执行第三步</p><div class="language-javascript"><pre><code><span class="token keyword">if</span> <span class="token punctuation">(</span>changed<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  text<span class="token punctuation">.</span>data <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这几乎就是Svelte生成的更新代码。与传统的UI框架不同，Svelte是一种编译器，它在<em>构建时</em>就知道应用程序中的<em>情况</em>如何变化，而不必等着在<em>运行时</em>进行工作。</p><h3 id="业内大牛如何看待-svelte"><a class="header-anchor" href="#业内大牛如何看待-svelte" aria-hidden="true">#</a> 业内大牛如何看待 svelte</h3><p>vue 的作者尤雨溪，在知乎回答了个 <a href="https://www.zhihu.com/question/53150351" target="_blank" rel="noopener noreferrer">《如何看待 svelte 这个前端框架？》</a> [3] 问题</p><p><img src="/_assets/image-20201130170959194.4bf49eaa.png" alt=""></p><p>“svelte 的核心思想在于 <strong>通过静态编译来减少框架运行时的代码</strong>”</p><h3 id="关于-ui"><a class="header-anchor" href="#关于-ui" aria-hidden="true">#</a> 关于 UI</h3><p>我觉着这两个ui还是比较不错的</p><p><strong>Material UI</strong></p><p><a href="https://sveltematerialui.com/" target="_blank" rel="noopener noreferrer">https://sveltematerialui.com/</a></p><p><a href="https://github.com/hperrin/svelte-material-ui" target="_blank" rel="noopener noreferrer">https://github.com/hperrin/svelte-material-ui</a></p><p><strong>SVELTESTRAP</strong></p><p><a href="https://sveltestrap.js.org/" target="_blank" rel="noopener noreferrer">https://sveltestrap.js.org/</a></p><p><a href="https://github.com/bestguy/sveltestrap" target="_blank" rel="noopener noreferrer">https://github.com/bestguy/sveltestrap</a></p><h3 id="svelte-与其他框架"><a class="header-anchor" href="#svelte-与其他框架" aria-hidden="true">#</a> svelte 与其他框架</h3><p>老严闲来的时候找到了 一个叫做 <code>Realworld</code> 存储库中有24种conduit实现As ，也就是用来对比性能的以及大小的；</p><p>今天一起来对比一下 vue/react/svelte 这三个框架的</p><ul><li>项目打包后压缩包大小</li><li>项目网页性能分析对比</li></ul><p>vue：<a href="https://github.com/gothinkster/vue-realworld-example-app" target="_blank" rel="noopener noreferrer">https://github.com/gothinkster/vue-realworld-example-app</a></p><p>react：<a href="https://github.com/gothinkster/react-redux-realworld-example-app" target="_blank" rel="noopener noreferrer">https://github.com/gothinkster/react-redux-realworld-example-app</a></p><p>svelte：<a href="https://github.com/sveltejs/realworld" target="_blank" rel="noopener noreferrer">https://github.com/sveltejs/realworld</a></p><p>感兴趣的同学也可以看看其他框架 <a href="https://github.com/gothinkster/realworld" target="_blank" rel="noopener noreferrer">https://github.com/gothinkster/realworld</a></p><p><img src="/_assets/image-20201201175253834.39bb1458.png" alt=""></p><h4 id="开始打包"><a class="header-anchor" href="#开始打包" aria-hidden="true">#</a> 开始打包</h4><p>这三个项目，打包顺序基本上在同一时间执行 <code>npm run build</code>，svelte 直接在我我眨眼的一瞬间打完包 ，啪 很快啊 （有点夸张~几秒钟）</p><p>静静的等待vue和react同时打包完之后，我开始进行统一压缩静态文件，压缩格式为zip</p><h4 id="对比大小"><a class="header-anchor" href="#对比大小" aria-hidden="true">#</a> 对比大小</h4><p>排名如下</p><ol><li>svelte — 89.9 KB</li><li>vue — 483 KB</li><li>react — 490 KB</li></ol><p>果然差距还是确实如传说一样恐怖</p><h4 id="性能考核"><a class="header-anchor" href="#性能考核" aria-hidden="true">#</a> 性能考核</h4><p>严老湿本次使用 Chrome 的 Lighthouse （谷歌网页性能分析工具） 来对比性能评分</p><p>全局安装 <code>lighthouse</code></p><div class="language-shell"><pre><code><span class="token function">npm</span> <span class="token function">install</span> -g lighthouse
+</code></pre></div><p>执行 （直接使用的对应的线上地址）</p><div class="language-shell"><pre><code>lighthouse https://realworld.svelte.dev/
+</code></pre></div><p>这是我在下面所测试的截屏</p><p>vue</p><p><img src="/_assets/image-20201203171006602.45eede8c.png" alt=""></p><p>react</p><p><img src="/_assets/image-20201203171137276.017d0b40.png" alt=""></p><p>svelte</p><p><img src="/_assets/image-20201203171339234.00bd66dd.png" alt=""></p><h4 id="对比性能"><a class="header-anchor" href="#对比性能" aria-hidden="true">#</a> 对比性能</h4><p>性能得分排名如下：</p><ol><li>svelte — 83</li><li>react — 52</li><li>vue — 32</li></ol><p><code>svelte</code> 也是不负众望 稳居第一</p><h3 id="使用-svelte-模板"><a class="header-anchor" href="#使用-svelte-模板" aria-hidden="true">#</a> 使用 svelte 模板</h3><p>看到上面，天天被逼着做性能优化的同学，激动起来了 ~ 那我们一起来简单学习一下这个性能强悍的 svelte 吧</p><p>svelte 模板 [4] ，我们直接使用一个模板来开工</p><div class="language-shell"><pre><code><span class="token function">git</span> clone https://github.com/sveltejs/template
+<span class="token operator">&amp;</span>
+<span class="token builtin class-name">cd</span> template-master
+</code></pre></div><h3 id="下载依赖"><a class="header-anchor" href="#下载依赖" aria-hidden="true">#</a> 下载依赖</h3><div class="language-shell"><pre><code><span class="token function">yarn</span> <span class="token function">install</span> 
+or 
+<span class="token function">npm</span> <span class="token function">install</span>
+</code></pre></div><p>下载完成之后，我们看看目录。老严的评价就是 <code>简洁</code></p><p><img src="/_assets/image-20201130113835071.f1222ed0.png" alt=""></p><h3 id="启动项目"><a class="header-anchor" href="#启动项目" aria-hidden="true">#</a> 启动项目</h3><div class="language-shell"><pre><code><span class="token function">yarn</span> dev
+or
+<span class="token function">npm</span> run dev
+</code></pre></div><p>启动完成之后</p><div class="language-shell"><pre><code>  Your application is ready~<span class="token operator">!</span> �
+
+  - Local:      http://localhost:5000
+  - Network:    Add <span class="token variable"><span class="token variable">`</span>--host<span class="token variable">`</span></span> to expose
+</code></pre></div><h3 id="打开页面"><a class="header-anchor" href="#打开页面" aria-hidden="true">#</a> 打开页面</h3><p>地址栏输入 <code>http://localhost:5000</code></p><p><img src="/_assets/image-20201130113222571.389d4666.png" alt="image-20201130113222571"></p><p>我们可以看到这样的一个页面 hello world</p><h3 id="安装ui"><a class="header-anchor" href="#安装ui" aria-hidden="true">#</a> 安装ui</h3><p>这里我们使用 sveltestrap</p><div class="language-javascript"><pre><code>npm install <span class="token operator">--</span>save sveltestrap 
+npm install <span class="token operator">--</span>save bootstrap
+</code></pre></div><p>在 main.js 中引入</p><div class="language-javascript"><pre><code><span class="token keyword">import</span> <span class="token string">&#39;bootstrap/dist/css/bootstrap.min.css&#39;</span><span class="token punctuation">;</span>
+</code></pre></div><p>在页面中引入组件</p><div class="language-js"><pre><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;sveltestrap&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;I warned you!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>Button color<span class="token operator">=</span><span class="token string">&quot;danger&quot;</span> on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>Do Not Press<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>
+</code></pre></div><p><img src="/_assets/image-20201205104807542.30246559.png" alt=""></p><h3 id="简单了解语法"><a class="header-anchor" href="#简单了解语法" aria-hidden="true">#</a> 简单了解语法</h3><p>在学习之前我觉得有必要简单了解一下其语法</p><h4 id="绑定数据"><a class="header-anchor" href="#绑定数据" aria-hidden="true">#</a> 绑定数据</h4><p>在 vue 中我们的变量需要写在 <code>data</code> 中 ，而 <code>svelte</code> 语法更加贴合原生</p><div class="language-html"><pre><code><span class="token comment">&lt;!-- vue --&gt;</span>
+data() {
+	return {
+		name: &#39;hhh&#39;,
+	};
+}
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{{name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>svelte 绑定数据 ，svelte 动态绑定需要加上 {}</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;sveltestrap&quot;</span><span class="token punctuation">;</span>
+	<span class="token comment">// 定义数据</span>
+	<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&quot;hhh&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> src <span class="token operator">=</span> <span class="token string">&#39;http://crazy-x-lovemysoul-x-vip.img.abc188.com/images/logo.png&#39;</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 绑定数据 --&gt;</span>
+<span class="token comment">&lt;!-- 如果kv一致只用写一个 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">{src}</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span><span class="token punctuation">&gt;</span></span>{name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="/_assets/image-20201205114940929.2dceb674.png" alt=""></p><h4 id="条件渲染"><a class="header-anchor" href="#条件渲染" aria-hidden="true">#</a> 条件渲染</h4><p>vue 中有条件渲染 <code>v-if</code> <code>v-else-if</code> <code>v-else</code> ,svelte 也有</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">let</span> condition <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+{#if condition == 2}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>悲<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+{:else if condition == 1}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>伤 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+{:else if condition == 0}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>日<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+{:else}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>记<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+{/if}
+</code></pre></div><p><img src="/_assets/image-20201205133217424.3f0092e9.png" alt=""></p><h4 id="循环渲染"><a class="header-anchor" href="#循环渲染" aria-hidden="true">#</a> 循环渲染</h4><p>循环渲染列表</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">// 定义变量</span>
+	<span class="token keyword">let</span> news <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">&#39;拜登呼吁必须停止把对手当敌人&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">&#39;江苏响水致78死爆炸案一审宣判&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">&#39;嫦娥五号将择机实施月面软着陆&#39;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 有没有点 ejs的感觉 --&gt;</span>
+	{#each news as {title}}
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://www.baidu.com/s?rsv_idx=1&amp;wd={title}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				{title}
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+	{/each}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">ul,li</span><span class="token punctuation">{</span>
+		<span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token selector">a</span><span class="token punctuation">{</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> #ff3e00<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="/_assets/image-20201205133722710.01899928.png" alt=""></p><p>咋感觉有点像 <code>ejs</code> 循环渲染呢 [5]呢?</p><h4 id="事件绑定"><a class="header-anchor" href="#事件绑定" aria-hidden="true">#</a> 事件绑定</h4><p>在 <code>svelte</code> 中方法直接写函数定义函数即可使用</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;sveltestrap&quot;</span><span class="token punctuation">;</span>
+	<span class="token comment">// 定义数据</span>
+	<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&quot;hhh&quot;</span><span class="token punctuation">,</span>title <span class="token operator">=</span> <span class="token string">&#39;标题&#39;</span><span class="token punctuation">;</span>
+	<span class="token comment">// 定义方法</span>
+	<span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		name <span class="token operator">=</span> <span class="token string">&quot;严老湿&quot;</span>
+		title <span class="token operator">=</span> <span class="token string">&quot;老严带你入坑 svelte&quot;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- on:click 绑定方法  {绑定动态值}--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>danger<span class="token punctuation">&quot;</span></span> <span class="token attr-name"><span class="token namespace">on:</span>click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{handleClick}</span><span class="token punctuation">&gt;</span></span>{name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>{title}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="/_assets/method.bd48056d.gif" alt=""></p><h4 id="组件"><a class="header-anchor" href="#组件" aria-hidden="true">#</a> 组件</h4><p>组件是框架必不可少的一个功能</p><p>来看看 svelte 中如何创建一个组件吧</p><p>app.svelte</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">// 直接引入组件即可使用 无需注册</span>
+	<span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">&#39;./components/child.svelte&#39;</span>
+	<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&#39;我是你爹&#39;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	{name}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Child</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Child</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>创建一个 child.svelte 页面</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">let</span> title <span class="token operator">=</span> <span class="token string">&#39;我是你儿子&#39;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{title}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="/_assets/image-20201205140934477.80fd2e6d.png" alt="image-20201205140934477"></p><p>那么组件有了，我们来看看组件传值吧！</p><h5 id="传值"><a class="header-anchor" href="#传值" aria-hidden="true">#</a> 传值</h5><p>app.svelte</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">&#39;./components/child.svelte&#39;</span>
+	<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&#39;我是你爹&#39;</span>
+	<span class="token keyword">let</span> childName <span class="token operator">=</span> <span class="token string">&quot;狗剩&quot;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	{name}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Child</span> <span class="token attr-name">{childName}</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Child</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>child.svelte</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">let</span> childName<span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>爹给我取的名字是 {childName}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="/_assets/image-20201205141812363.1b4e3875.png" alt=""></p><p>刚刚我们是简单的单一传值</p><p>接下来我们传一个对象试试</p><p>app.svelte</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">&#39;./components/child.svelte&#39;</span>
+	<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&#39;我是你爹&#39;</span>
+	<span class="token keyword">let</span> aboutMe <span class="token operator">=</span> <span class="token punctuation">{</span>
+		name<span class="token operator">:</span><span class="token string">&#39;狗剩&#39;</span><span class="token punctuation">,</span>
+		age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">,</span>
+		gender<span class="token operator">:</span><span class="token string">&#39;man&#39;</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	{name}
+    <span class="token comment">&lt;!-- 通过... 展开 aboutMe --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Child</span> <span class="token attr-name">{...aboutMe}</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Child</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>child.svelte</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">let</span> name<span class="token punctuation">,</span>gender<span class="token punctuation">,</span>age<span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我取的名字是 {name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我取的年龄是 {age}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我取的性别是 {gender}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="/_assets/image-20201205142824450.6c92aed4.png" alt=""></p><p>那这多费劲呐？还需要一个个接收。有一话叫存在即合理</p><h4 id="动画"><a class="header-anchor" href="#动画" aria-hidden="true">#</a> 动画</h4><p>在官方 api 中提到 svelte 提供了一些动画效果出来给大家使用</p><p><img src="/_assets/image-20201205140449260.c7d23841.png" alt=""></p><p>我们直接使用官方示例 淡入淡出动画</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> fade <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte/transition&#39;</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> visible <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name"><span class="token namespace">bind:</span>checked</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{visible}</span><span class="token punctuation">&gt;</span></span>
+	visible
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+{#if visible}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name"><span class="token namespace">transition:</span>fade</span><span class="token punctuation">&gt;</span></span>
+		Fades in and out
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+{/if}
+</code></pre></div><p><img src="/_assets/animation.7820baad.gif" alt=""></p><h4 id="生命周期"><a class="header-anchor" href="#生命周期" aria-hidden="true">#</a> 生命周期</h4><p>在 svelte 中的生命周期有onMount 、beforeUpdate 、afterUpdate 、afterUpdate 下面老严依次给大家伙列出来</p><ul><li><p>onMount （挂载后）</p><p>该<code>onMount</code>函数作为将component挂载到DOM后立即执行的回调。它必须在component初始化期间被调用（但不必位于component内部；可以从外部模块调用它）。</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> onMount <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte&#39;</span><span class="token punctuation">;</span>
+
+    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;the component has mounted&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>如果需要<code>onMount</code>返回一个函数，则在卸载 component 时调用该函数。</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> onMount <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte&#39;</span><span class="token punctuation">;</span>
+
+	<span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> interval <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;beep&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">clearInterval</span><span class="token punctuation">(</span>interval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li><li><p>beforeUpdate （更新前）</p><p><code>beforeUpdate</code>任何状态更改后组件更新之前，回调函数会立即运行。第一次回调运行将在初始onMount之前.</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> beforeUpdate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte&#39;</span><span class="token punctuation">;</span>
+
+    <span class="token function">beforeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;the component is about to update&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li><li><p>afterUpdate （更新后)</p><p><code>afterUpdate</code>在组件更新后立即运行回调</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> afterUpdate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte&#39;</span><span class="token punctuation">;</span>
+
+    <span class="token function">afterUpdate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;the component just updated&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li><li><p>onDestroy（销毁后）</p><p>在组件卸载后运行回调。在onMount、beforeUpdate、afterUpdate和onDestroy中，这是唯一一个在服务器端组件中运行的组件。</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> onDestroy <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte&#39;</span><span class="token punctuation">;</span>
+
+    <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;the component is being destroyed&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ul><h3 id="案例"><a class="header-anchor" href="#案例" aria-hidden="true">#</a> 案例</h3><p>老严逛着逛着 正好看到一个 官方示例的 <code>to do list</code> 本来还想着说带大家做，那既然有现成的，将就一下</p><p>没有什么框架是写一个 todolist 还学不会的 ，老严在代码里面也加了一些代码注释</p><p>因为样式代码 太多,我们先上效果图再看代码</p><p><img src="/_assets/todolist.e76010fa.gif" alt=""></p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> quintOut <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte/easing&#39;</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> crossfade <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte/transition&#39;</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> <span class="token punctuation">{</span> flip <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;svelte/animate&#39;</span><span class="token punctuation">;</span>
+	<span class="token comment">// 动画</span>
+	<span class="token keyword">const</span> <span class="token punctuation">[</span>send<span class="token punctuation">,</span> receive<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">crossfade</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		<span class="token function-variable function">duration</span><span class="token operator">:</span> <span class="token parameter">d</span> <span class="token operator">=&gt;</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>d <span class="token operator">*</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+		<span class="token function">fallback</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">const</span> style <span class="token operator">=</span> <span class="token function">getComputedStyle</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">const</span> transform <span class="token operator">=</span> style<span class="token punctuation">.</span>transform <span class="token operator">===</span> <span class="token string">&#39;none&#39;</span> <span class="token operator">?</span> <span class="token string">&#39;&#39;</span> <span class="token operator">:</span> style<span class="token punctuation">.</span>transform<span class="token punctuation">;</span>
+			<span class="token keyword">return</span> <span class="token punctuation">{</span>
+				duration<span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+				easing<span class="token operator">:</span> quintOut<span class="token punctuation">,</span>
+				<span class="token function-variable function">css</span><span class="token operator">:</span> <span class="token parameter">t</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+					transform: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>transform<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> scale(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>t<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">);
+					opacity: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>t<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+				</span><span class="token template-punctuation string">`</span></span>
+			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">let</span> uid <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token comment">// 默认数据</span>
+	<span class="token keyword">let</span> todos <span class="token operator">=</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">{</span> id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">&#39;write some docs&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span> id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">&#39;start writing blog post&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span> id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  description<span class="token operator">:</span> <span class="token string">&#39;buy some milk&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span> id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">&#39;mow the lawn&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span> id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">&#39;feed the turtle&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span> id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">&#39;fix some bugs&#39;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">// 新增待办</span>
+	<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> todo <span class="token operator">=</span> <span class="token punctuation">{</span>
+			id<span class="token operator">:</span> uid<span class="token operator">++</span><span class="token punctuation">,</span>
+			done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+			description<span class="token operator">:</span> input<span class="token punctuation">.</span>value
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+		todos <span class="token operator">=</span> <span class="token punctuation">[</span>todo<span class="token punctuation">,</span> <span class="token operator">...</span>todos<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		input<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 删除方法</span>
+	<span class="token keyword">function</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		todos <span class="token operator">=</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">t</span> <span class="token operator">=&gt;</span> t <span class="token operator">!==</span> todo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 选中方法</span>
+	<span class="token keyword">function</span> <span class="token function">mark</span><span class="token punctuation">(</span><span class="token parameter">todo<span class="token punctuation">,</span> done</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		todo<span class="token punctuation">.</span>done <span class="token operator">=</span> done<span class="token punctuation">;</span>
+		<span class="token function">remove</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		todos <span class="token operator">=</span> todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&#39;</span>board<span class="token punctuation">&#39;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 点击回车执行add  --&gt;</span>
+	&lt;input
+		placeholder=&quot;what needs to be done?&quot;
+		on:keydown={e =&gt; e.which === 13 &amp;&amp; add(e.target)}
+	&gt;
+	<span class="token comment">&lt;!-- 代办 --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&#39;</span>left<span class="token punctuation">&#39;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>todo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+		{#each todos.filter(t =&gt; !t.done) as todo (todo.id)}
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span>
+				<span class="token attr-name"><span class="token namespace">in:</span>receive</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{key: todo.id}}<span class="token punctuation">&quot;</span></span>
+				<span class="token attr-name"><span class="token namespace">out:</span>send</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{key: todo.id}}<span class="token punctuation">&quot;</span></span>
+				<span class="token attr-name"><span class="token namespace">animate:</span>flip</span>
+			<span class="token punctuation">&gt;</span></span>
+				<span class="token comment">&lt;!-- 选中代表已做完 --&gt;</span>
+				&lt;input type=checkbox on:change={() =&gt; mark(todo, true)}&gt;
+				{todo.description}
+				<span class="token comment">&lt;!-- 删除 --&gt;</span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">on:</span>click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{() =&gt; remove(todo)}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>remove<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+		{/each}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!-- 已完成 --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&#39;</span>right<span class="token punctuation">&#39;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>done<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+		{#each todos.filter(t =&gt; t.done) as todo (todo.id)}
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span>
+				<span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>done<span class="token punctuation">&quot;</span></span>
+				<span class="token attr-name"><span class="token namespace">in:</span>receive</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{key: todo.id}}<span class="token punctuation">&quot;</span></span>
+				<span class="token attr-name"><span class="token namespace">out:</span>send</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{key: todo.id}}<span class="token punctuation">&quot;</span></span>
+				<span class="token attr-name"><span class="token namespace">animate:</span>flip</span>
+			<span class="token punctuation">&gt;</span></span>
+				<span class="token comment">&lt;!-- 修改状态为代办 --&gt;</span>
+				&lt;input type=checkbox checked on:change={() =&gt; mark(todo, false)}&gt;
+				{todo.description}
+				<span class="token comment">&lt;!-- 删除 --&gt;</span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">on:</span>click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{() =&gt; remove(todo)}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>remove<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+		{/each}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.board</span> <span class="token punctuation">{</span>
+		<span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+		<span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr<span class="token punctuation">;</span>
+		<span class="token property">grid-gap</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+		<span class="token property">max-width</span><span class="token punctuation">:</span> 36em<span class="token punctuation">;</span>
+		<span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">.board &gt; input</span> <span class="token punctuation">{</span>
+		<span class="token property">font-size</span><span class="token punctuation">:</span> 1.4em<span class="token punctuation">;</span>
+		<span class="token property">grid-column</span><span class="token punctuation">:</span> 1/3<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">h2</span> <span class="token punctuation">{</span>
+		<span class="token property">font-size</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+		<span class="token property">font-weight</span><span class="token punctuation">:</span> 200<span class="token punctuation">;</span>
+		<span class="token property">user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+		<span class="token property">margin</span><span class="token punctuation">:</span> 0 0 0.5em 0<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">label</span> <span class="token punctuation">{</span>
+		<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+		<span class="token property">line-height</span><span class="token punctuation">:</span> 1.2<span class="token punctuation">;</span>
+		<span class="token property">padding</span><span class="token punctuation">:</span> 0.5em 2.5em 0.5em 2em<span class="token punctuation">;</span>
+		<span class="token property">margin</span><span class="token punctuation">:</span> 0 0 0.5em 0<span class="token punctuation">;</span>
+		<span class="token property">border-radius</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+		<span class="token property">user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+		<span class="token property">border</span><span class="token punctuation">:</span> 1px solid <span class="token function">hsl</span><span class="token punctuation">(</span>240<span class="token punctuation">,</span> 8%<span class="token punctuation">,</span> 70%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token property">background-color</span><span class="token punctuation">:</span><span class="token function">hsl</span><span class="token punctuation">(</span>240<span class="token punctuation">,</span> 8%<span class="token punctuation">,</span> 93%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">input[type=&quot;checkbox&quot;]</span> <span class="token punctuation">{</span>
+		<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+		<span class="token property">left</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+		<span class="token property">top</span><span class="token punctuation">:</span> 0.6em<span class="token punctuation">;</span>
+		<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">.done</span> <span class="token punctuation">{</span>
+		<span class="token property">border</span><span class="token punctuation">:</span> 1px solid <span class="token function">hsl</span><span class="token punctuation">(</span>240<span class="token punctuation">,</span> 8%<span class="token punctuation">,</span> 90%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token property">background-color</span><span class="token punctuation">:</span><span class="token function">hsl</span><span class="token punctuation">(</span>240<span class="token punctuation">,</span> 8%<span class="token punctuation">,</span> 98%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">button</span> <span class="token punctuation">{</span>
+		<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+		<span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token property">right</span><span class="token punctuation">:</span> 0.2em<span class="token punctuation">;</span>
+		<span class="token property">width</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+		<span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+		<span class="token property">background</span><span class="token punctuation">:</span> no-repeat 50% 50% <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 24 24&#39;%3E%3Cpath fill=&#39;%23676778&#39; d=&#39;M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z&#39;%3E%3C/path%3E%3C/svg%3E&quot;</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+		<span class="token property">background-size</span><span class="token punctuation">:</span> 1.4em 1.4em<span class="token punctuation">;</span>
+		<span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+		<span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token property">transition</span><span class="token punctuation">:</span> opacity 0.2s<span class="token punctuation">;</span>
+		<span class="token property">text-indent</span><span class="token punctuation">:</span> -9999px<span class="token punctuation">;</span>
+		<span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">label:hover button</span> <span class="token punctuation">{</span>
+		<span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>当你可以手动写出这个todolist的时候，你就已经出师了，因为老严也就这点能耐 哈哈</p><p>最后代码，我提交到了git 有需要的同学可以去下载噢</p><h3 id="注解"><a class="header-anchor" href="#注解" aria-hidden="true">#</a> 注解</h3><p>[0] <a href="https://zhuanlan.zhihu.com/p/97825481" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/p/97825481</a></p><p>[1] <a href="https://www.firecat.run/" target="_blank" rel="noopener noreferrer">https://www.firecat.run/</a></p><p>[2] <a href="https://svelte.dev/blog/virtual-dom-is-pure-overhead" target="_blank" rel="noopener noreferrer">https://svelte.dev/blog/virtual-dom-is-pure-overhead</a></p><p>[3] <a href="https://www.zhihu.com/question/53150351" target="_blank" rel="noopener noreferrer">https://www.zhihu.com/question/53150351</a></p><p>[4] <a href="https://github.com/sveltejs/template" target="_blank" rel="noopener noreferrer">https://github.com/sveltejs/template</a></p><p>[5] <a href="https://ejs.bootcss.com/#docs" target="_blank" rel="noopener noreferrer">https://ejs.bootcss.com/#docs</a></p><h3 id="参考文献"><a class="header-anchor" href="#参考文献" aria-hidden="true">#</a> 参考文献</h3><ul><li><a href="https://www.firecat.run/docs" target="_blank" rel="noopener noreferrer">https://www.firecat.run/docs</a></li><li><a href="https://zhuanlan.zhihu.com/p/97825481" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/p/97825481</a></li><li><a href="https://iiong.com/sveltejs-study-notes/" target="_blank" rel="noopener noreferrer">https://iiong.com/sveltejs-study-notes/</a></li></ul></div><div class="links-wrapper"><div class="prev-link"><!----></div><div class="next-link"><!----></div></div><footer class="page-edit"><!----></footer><!--[--><!--[--><!--]--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"docs.md\":\"6b093fe9\",\"index.md\":\"be620e42\",\"README.md\":\"424ff87c\",\"tags.md\":\"e8b291f1\",\"docs_svelte-Study.md\":\"527bfa13\",\"docs_vue-Optimize.md\":\"e220060b\",\"docs_vue-PlugIn.md\":\"d1c20bfd\",\"docs_vue-Render.md\":\"7995346f\",\"docs_vue-technique.md\":\"ce276a64\",\"docs_vue-TreeColor.md\":\"d38d3b34\"}")</script>
+    <script type="module" async src="/_assets/app.20e0090b.js"></script>
+  </body>
+</html>
