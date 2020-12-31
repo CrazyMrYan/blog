@@ -5,14 +5,22 @@
 
 <script>
   export default {
-    name: "comment",
+    name: "blog-comments",
     mounted() {
       const commentConfig = {
-        clientID: "e621b27241a69a7f512b",
-        clientSecret: "434a88dbe2ba420fa3022a4287493227a2b31b0d",
-        repo: "https://github.com/Moking1997/Moking1997.github.io",
-        owner: "Moking1997",
-        admin: ["Moking1997"],
+        // 是否开启
+        enable: true,
+        // clientID
+        clientID: "a6598e156cf30077f530",
+        // clientSecret
+        clientSecret: "a5e33f61a5071999b191b5f768f837e9187693fd",
+        // 评论项目名
+        repo: 'blog-comments',
+        owner: 'crazymryan',
+        admin: ['crazymryan'],
+        githubID:'crazymryan',
+        id: decodeURI(window.location.pathname),
+        distractionFreeMode: true
       };
       const gitalk = new Gitalk(commentConfig);
       gitalk.render("gitalk-container");

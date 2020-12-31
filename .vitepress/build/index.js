@@ -1,4 +1,4 @@
-const type = ''
+const type = 'build'
 export function Build(){
-    return type === 'build' ? '/blogtest' : ''
+    return type === 'build' ? '/blog' : ''
 }

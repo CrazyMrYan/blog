@@ -17,20 +17,48 @@ describe: 项目概述
 
 ## 效果预览
 
-在线地址:[www.moking1997.top](http://www.moking1997.top/)
-
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bea6d5aff2314807ad697badf01217f9~tplv-k3u1fbpfcp-watermark.image)
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ad5e2bc56ed447e1b313545e14e581fe~tplv-k3u1fbpfcp-watermark.image)
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ff6c25b2ce56486299d3caed58e24813~tplv-k3u1fbpfcp-watermark.image)
+在线地址:[https://crazymryan.github.io/blog](https://crazymryan.github.io/blog)
 
 ## 安装
 
 ```bash
-git clone https://github.com/Moking1997/vitepress-blog.git
-cd vitepress-blog
-yarn
-# 在本地启动服务器
-yarn dev
-# 构建静态文件 > .vitepress/dist
-yarn build
+git clone git@github.com:CrazyMrYan/blog.git
+&
+cd blog
 ```
+
+## 下载依赖&启动
+```shell
+# npm
+npm install
+&
+npm run dev
+
+# yarn
+yarn install
+&
+yarn dev
+```
+
+## 打包静态
+在打包之前你需要配置 `.vitepress` > `config.js` 中加上 base:'你的存放文件名'
+
+还需要在 `.vitepress` > `build` > `index.js` 修改 type 为 `build` 
+
+```diff
++ const type = 'build'
+export function Build(){
++    return type === 'build' ? '你的存放文件名' : ''
+}
+```
+
+```shell
+# npm
+npm run build
+
+# yarn
+yarn build
+
+```
+## 鸣谢 
+本项目采用 [Moking1997](https://github.com/Moking1997) 搭建的 [vitepress-blog](https://github.com/Moking1997/vitepress-blog),来进行的修改
