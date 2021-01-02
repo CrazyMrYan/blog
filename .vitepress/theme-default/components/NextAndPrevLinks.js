@@ -46,8 +46,5 @@ export default {
             prev,
             hasLinks
         };
-    },
-    mounted(){
-        this.hasLinks
     }
 };

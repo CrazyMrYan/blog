@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script src="./NextAndPrevLinks"></script>
+<script src="./NextAndPrevLinks.js"></script>
 
 <style>
 .links-wrapper {

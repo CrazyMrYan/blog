@@ -28,7 +28,7 @@ async function getConfig() {
         { text: "首页", link: "/" },
         { text: "归档", link: "/docs" },
         { text: "分类", link: "/tags" },
-        { text: "项目概述", link: "/README" },
+        { text: "README", link: "/README" },
       ],
     },
     dest: "public",

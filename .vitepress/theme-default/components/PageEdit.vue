@@ -26,7 +26,7 @@ export default {
         {href:"https://www.cnblogs.com/10ve/",icon:cnblogs},
         {href:"https://www.jianshu.com/u/cdd6feed8104",icon:jianshu},
         {href:"https://blog.csdn.net/Crazymryan",icon:csdn},
-        {href:"https://mp.weixin.qq.com/mp/homepage?__biz=MzI5NzM2MDQyMg==&hid=4&sn=7c9602a6eea3234125715516fc6ea67a",icon:wechat},
+        // {href:"https://mp.weixin.qq.com/mp/homepage?__biz=MzI5NzM2MDQyMg==&hid=4&sn=7c9602a6eea3234125715516fc6ea67a",icon:wechat},
       ]
     }
     return{
