@@ -1,0 +1,1 @@
+import{g as t,j as e,f as r,q as a}from"./common-9fe24c8f.js";const o='{"title":"归档","frontmatter":{"page":true,"date":"2021-01-03","title":"归档","describe":"归档"},"relativePath":"docs.md","lastUpdated":1609603561654.1624}';var s={};s.render=function(o,s,d,n,c,f){const i=a("Docs");return r(),t("div",null,[e(i)])};export default s;export{o as __pageData};
