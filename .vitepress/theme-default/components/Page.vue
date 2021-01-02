@@ -38,7 +38,6 @@
 
     setup() {
       const pageData = usePageData();
-
       return {
         pageData,
       };

@@ -13,7 +13,6 @@
         class="article"
       >
         <div class="title">
-          <div class="title-o"></div>
           {{ article.frontMatter.title || "" }}
         </div>
         <div class="date">{{ article.frontMatter.date.slice(5) || "" }}</div>
@@ -60,18 +59,10 @@
     color: var(--text-color);
   }
   .article {
-    padding: 2px 25px;
+    padding: 2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .title-o {
-    display: inline-block;
-    margin-right: 10px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #353535;
   }
   .title {
     color: #4a9ae1;
@@ -97,7 +88,6 @@
       overflow: hidden;
       text-overflow:ellipsis;
       white-space: nowrap;
-      width: 18em;
     }
   }
 </style>

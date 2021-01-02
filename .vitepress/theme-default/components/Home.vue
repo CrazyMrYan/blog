@@ -32,7 +32,6 @@
     components: {
       NavBarLink,
     },
-
     setup() {
       const pageData = usePageData();
       const siteData = useSiteData();
