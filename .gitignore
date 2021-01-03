@@ -1,5 +1,4 @@
 node_modules
 *.html
 /.vitepress/dist/
-docs
 .DS_Store
