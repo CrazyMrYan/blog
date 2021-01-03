@@ -20,6 +20,7 @@
         admin: ['crazymryan'],
         githubID:'crazymryan',
         id: decodeURI(window.location.pathname),
+        language:'zh-CN',
         distractionFreeMode: true
       };
       const gitalk = new Gitalk(commentConfig);
