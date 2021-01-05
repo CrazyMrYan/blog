@@ -21,6 +21,10 @@ describe: 项目概述
 
 ✅ 文章分类
 
+✅ 文章列表分页
+
+⬜ 文章上下页
+
 ## 效果预览
 
 在线地址:[https://crazymryan.github.io/blog](https://crazymryan.github.io/blog)
