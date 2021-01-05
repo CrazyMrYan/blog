@@ -1,1 +1,0 @@
-import{g as t,j as e,f as a,q as r}from"./common-9fe24c8f.js";const s='{"title":"分类","frontmatter":{"page":true,"date":"2021-01-03","title":"分类","describe":"分类"},"relativePath":"tags.md","lastUpdated":1609603540297.6404}';var o={};o.render=function(s,o,n,d,f,i){const l=r("Tags");return a(),t("div",null,[e(l)])};export default o;export{s as __pageData};
