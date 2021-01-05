@@ -124,6 +124,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 .prev {
   background-image: url("./icons/prev.png");
   background-repeat: no-repeat;

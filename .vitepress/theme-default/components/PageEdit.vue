@@ -40,6 +40,9 @@ export default {
 .platform{
   text-align: center;
 }
+.platform > a{
+  color:  #2196f3;
+}
 .page-edit {
   overflow: auto;
   display: flex;
