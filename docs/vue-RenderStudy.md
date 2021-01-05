@@ -21,7 +21,7 @@ describe: 快速上手使用render函数
 
 浏览器渲染引擎工作流程
 
-![浏览器渲染引擎工作流程](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/db83f0af50f441a89656ce6d80e5f342~tplv-k3u1fbpfcp-zoom-1.image)
+![浏览器渲染引擎工作流程](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/db83f0af50f441a89656ce6d80e5f342~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
@@ -58,7 +58,7 @@ describe: 快速上手使用render函数
 
 这样我们也是一样的可以实现 template 中的元素
 
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f7248c7e65e94c51bef035381bb20496~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f7248c7e65e94c51bef035381bb20496~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
@@ -91,7 +91,7 @@ describe: 快速上手使用render函数
 
 
 
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9006b49d0d734a28a604702c893f563d~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9006b49d0d734a28a604702c893f563d~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
@@ -137,7 +137,7 @@ data:[
 
 看看效果
 
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa0da8aed0664be7a42941dcb2ceeee9~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa0da8aed0664be7a42941dcb2ceeee9~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
@@ -184,7 +184,7 @@ data:[
 
 
 
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0cc9e1f27a464532a99e0804788a4258~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0cc9e1f27a464532a99e0804788a4258~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 我们给`li` 标签加上了class之后，可以直接在元素上看到 `child-element` ,然后想修改样式的呢，直接通过选择器修改就好了，这就不用多说了吧！
@@ -232,7 +232,7 @@ data:[
 
 打印结果：
 
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2b0b8f8454a74c588fb3a32ed387d543~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2b0b8f8454a74c588fb3a32ed387d543~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
@@ -288,7 +288,7 @@ export default {
 
 ok 返回到页面上，我们已经看到了组件
 
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/94e77b99098e4caaa39a86cddd24e630~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/94e77b99098e4caaa39a86cddd24e630~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
