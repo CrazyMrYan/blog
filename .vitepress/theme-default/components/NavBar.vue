@@ -32,10 +32,13 @@
 
 .logo {
   margin-right: 0.75rem;
-  height: 1.3rem;
+  height: 2rem;
   vertical-align: bottom;
+  border-radius: 10px;
 }
-
+.hide-mobile{
+  margin-right: 5rem;
+}
 @media screen and (max-width: 719px) {
   .hide-mobile {
     display: none;

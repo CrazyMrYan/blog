@@ -150,7 +150,7 @@ export default defineComponent({
   flex: 1;
   font-size: 1.2rem;
   text-align: center;
-  color: #2c3e50;
+  color: var(--text-color-light);
 }
 
 .paging > div {
@@ -165,8 +165,8 @@ export default defineComponent({
 }
 .article {
   display: block;
-  border-bottom: 1px solid #e5e5e5;
-  color: #555;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color-light);
   padding: 2rem 0;
 }
 .article-header {
@@ -179,7 +179,7 @@ export default defineComponent({
   letter-spacing: 0.5px;
 }
 .title {
-  color: #353535;
+  color: var(--title-color);
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
@@ -189,7 +189,7 @@ export default defineComponent({
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  border-top: 0.2rem solid #353535;
+  border-top: 0.2rem solid var(--text-color-light);
   display: block;
   width: 2rem;
 }

@@ -537,3 +537,5 @@ vue2 大部分同学刷题也经常会碰到 ，我们接下来看看vue2如何�
 \[5\] [https://developer.mozilla.org/zh-CN/docs/Web/API/CustomEvent](https://link.zhihu.com/?target=https%3A//developer.mozilla.org/zh-CN/docs/Web/API/CustomEvent)
 
 \[6\] [https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget](https://link.zhihu.com/?target=https%3A//developer.mozilla.org/zh-CN/docs/Web/API/EventTarget)
+
+<Comment/>

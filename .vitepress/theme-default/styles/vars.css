@@ -5,10 +5,35 @@
   --text-color: #2c3e50;
   --text-color-light: #476582;
   --code-bg-color: #282c34;
+  --header-color:#fff;
   --accent-color: #2196f3;
-
+  --title-color:rgb(53, 53, 53);
+  --bg-color: #fff;
+  --table-bg-2n: #f6f8fa;
+  --table-color: #2c3e50;
+  --code-bg-color: #000;
+  --img-opacity: 1;
+  --p-code:#f4f4f4;
   /* responsive breakpoints */
   /* --mq-narrow: 959px; */
   /* --mq-mobile: 719px; */
   /* --mq-mobile-narrow: 419px; */
+}
+
+.themeDark {
+  --border-color: #3b434b;
+  --header-height: 3.6rem;
+  --header-color:#161b22;
+  --sidebar-width: 16.4rem;
+  --text-color: #c9d1d9;
+  --text-color-light: #efefef;
+  --code-bg-color: #0d1117;
+  --accent-color: #c9d1d9;
+  --title-color: rgba(255, 255, 255, 0.8);
+  --bg-color: #0d1117;
+  --table-bg-2n: #161b22;
+  --table-color: #c9d1d9;
+  --code-bg-color: #000;
+  --img-opacity: 0.8;
+  --p-code:#171514;
 }

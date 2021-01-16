@@ -2,19 +2,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
   font-size: 0.85em;
   color: var(--text-color-light);
-  background-color: rgba(27, 31, 35, 0.05);
+  background-color: #000;
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   margin: 0;
 }
-
+p > code{
+  background-color: var(--p-code);
+  color: var(--text-color-light);
+}
 code .token.deleted {
   color: #ec5975;
 }
 
-code .token.inserted {
+/* code .token.inserted {
   color: var(--accent-color);
-}
+} */
 
 div[class*='language-'] {
   line-height: 1.5;

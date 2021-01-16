@@ -1,6 +1,6 @@
 ---
 date: 2020-07-27
-title: Vue 项目如何使用 Echarts ， 手摸手带你入门
+title: Vue 项目如何使用 Echarts 
 tags:
   - Vue
   - Echarts
@@ -457,3 +457,5 @@ let config = {
 [https://echarts.apache.org/zh/option.html](https://link.zhihu.com/?target=https%3A//echarts.apache.org/zh/option.html)
 
 [https://echarts.apache.org/examples/zh/index.html](https://link.zhihu.com/?target=https%3A//echarts.apache.org/examples/zh/index.html)
+
+<Comment/>

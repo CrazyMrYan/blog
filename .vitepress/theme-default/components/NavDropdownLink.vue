@@ -9,7 +9,6 @@
       <span>{{ item.text }}</span>
       <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
-
     <ul class="nav-dropdown">
       <li v-for="(subItem, index) in item.items" :key="subItem.link || index" class="dropdown-item">
         <h4 v-if="subItem.items">{{ subItem.text }}</h4>
@@ -36,6 +35,18 @@
           @focusout="isLastItemOfArray(subItem, item.items) && setOpen(false)"
         />
       </li>
+      <!-- 增加得一个img的 图标 -->
+      <li><a 
+        href="https://github.com/CrazyMrYan" 
+        class="nav-link"
+        style="border-bottom: none;display: flex; align-items: center; margin-left: 10px;padding: 0px 1.5rem 0px .8rem;">
+        <img 
+          class="my-svg" 
+          src="https://github.githubassets.com/images/icons/emoji/octocat.png" 
+          style="width:1rem; height: 1rem;"
+          />
+          老严 de GitHub
+      </a></li>
     </ul>
   </div>
 </template>
@@ -168,10 +179,9 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #fff;
+  background-color: var(--header-color);
   padding: 0.6rem 0;
-  border: 1px solid #ddd;
-  border-bottom-color: #ccc;
+  border: 1px solid var(--border-color);
   text-align: left;
   border-radius: 0.25rem;
   white-space: nowrap;
@@ -214,5 +224,8 @@
   .dropdown-wrapper .nav-dropdown .dropdown-item .nav-link {
     font-size: 0.9rem;
   }
+}
+.nav-link:hover{
+  color: var(--accent-color);
 }
 </style>

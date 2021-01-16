@@ -197,3 +197,5 @@ js
 也是简单的讲一讲，因为官网API挺详细的，我也就带大家入个门哈哈
 
 API地址：[http://lbsyun.baidu.com/cms/jsapi/reference/lite.html](https://link.zhihu.com/?target=http%3A//lbsyun.baidu.com/cms/jsapi/reference/lite.html)
+
+<Comment/>

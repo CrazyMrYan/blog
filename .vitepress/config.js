@@ -17,18 +17,24 @@ async function getConfig() {
         "link",
         { rel: "stylesheet", href: "https://unpkg.com/gitalk/dist/gitalk.css" },
       ],
-      ["script", { src: "https://unpkg.com/gitalk/dist/gitalk.min.js" }],
+      ["script", { src: "https://unpkg.com/gitalk/dist/gitalk.min.js" }]
     ],
     title: "悲伤日记",
     themeConfig: {
+      logo: '/favicon.ico',
       pages: await getPages(),
       author: "悲伤日记",
       search: true,
       nav: [
-        { text: "首页", link: "/" },
-        { text: "归档", link: "/docs" },
-        { text: "分类", link: "/tags" },
-        { text: "README", link: "/README" },
+        { text: "🏠 首页", link: "/" },
+        { text: "📅 归档", link: "/docs" },
+        { text: "📂 分类", link: "/tags" },
+        {
+          text: '🔨 关于',
+          items: [
+            { text: "📜 README", link: "/README" },
+          ]
+        },
       ],
     },
     dest: "public",

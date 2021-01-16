@@ -30,6 +30,5 @@ module.exports = async () => {
   pages = pages.filter((item) => !item.frontMatter.page);
 
   pages.sort(compareDate);
-
   return pages;
 };

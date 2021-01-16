@@ -77,7 +77,7 @@
     margin: 0 16px 12px 0;
     font-size: 14px;
     line-height: 25px;
-    background-color: #fafafa;
+    background-color: rgba(250, 250, 250,.2);
     transition: 0.4s;
     color: #4a9ae1;
     cursor: pointer;

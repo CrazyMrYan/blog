@@ -65,7 +65,7 @@
     align-items: center;
   }
   .title {
-    color: #4a9ae1;
+      color: var(--accent-color);
     font-size: 1.1rem;
   }
   .date {
@@ -91,4 +91,3 @@
     }
   }
 </style>
->

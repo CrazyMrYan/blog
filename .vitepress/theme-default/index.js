@@ -4,6 +4,8 @@ import './styles/code.css';
 import './styles/custom-blocks.css';
 import Layout from './Layout.vue';
 import NotFound from './NotFound.vue';
+// document.getElementsByTagName('body')[0].className = 'themeRed'
+
 const theme = {
     Layout,
     NotFound
