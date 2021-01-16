@@ -1,0 +1,1 @@
+import{g as t,j as e,f as a,q as r}from"./common-daabc399.js";const o='{"title":"📅 归档","frontmatter":{"page":true,"date":"2021-01-03","title":"📅 归档","describe":"归档"},"relativePath":"docs.md","lastUpdated":1610788103193.4993}';var s={};s.render=function(o,s,d,n,c,i){const l=r("Docs");return a(),t("div",null,[e(l)])};export default s;export{o as __pageData};
