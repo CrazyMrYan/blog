@@ -1,0 +1,1 @@
+import{g as t,j as e,f as a,q as r}from"./common-26acb587.js";const s='{"title":"📂 分类","frontmatter":{"page":true,"date":"2021-01-03","title":"📂 分类","describe":"分类"},"relativePath":"tags.md","lastUpdated":1610788149763.849}';var o={};o.render=function(s,o,n,d,i,l){const c=r("Tags");return a(),t("div",null,[e(c)])};export default o;export{s as __pageData};
