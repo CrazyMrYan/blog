@@ -47,9 +47,11 @@ describe: 项目概述
 
 在线地址:[https://crazymryan.github.io/blog](https://crazymryan.github.io/blog)
 
-国内访问:[http://crazy.lovemysoul.vip/blog](http://crazy.lovemysoul.vip/blog) 
+国内访问:[http://blog.lovemysoul.vip/](http://blog.lovemysoul.vip/) 
 
-注意：（因为自己的服务器域名马上要过期了，我就懒得再去配置一个 gitalk 了，所以国内访问不携带评论功能。等有时间了在不上来）
+地址已经换了 
+
+还是因为懒，直接把 githubpages 的评论回调地址给换成了 http://blog.lovemysoul.vip/ 所以 GitHubpages的评论是有问题的
 
 ## 安装
 
