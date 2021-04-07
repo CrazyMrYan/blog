@@ -1,5 +1,6 @@
 <template>
-  <a
+  <div>
+      <a
     v-show="!article.frontMatter.home"
     :href="base + article.regularPath || ''"
     v-for="(article, index) in dynamicPage.currentData"
@@ -26,16 +27,15 @@
       v-if="initPage.page !== 0"
       @click="getChangePage(-1)"
     ></div>
-    <div v-else></div>
     <span>{{ dynamicPage.totalPages }} - {{ initPage.page + 1 }}</span>
     <div
       class="next"
       v-if="initPage.page + 1 !== dynamicPage.totalPages"
       @click="getChangePage(1)"
     ></div>
-    <div v-else></div>
   </div>
   <PageEdit />
+  </div>
 </template>
 
 <script>
@@ -120,6 +120,9 @@ export default defineComponent({
       siteDescription,
     };
   },
+  mounted(){
+    axios.post('http://42.193.173.48:3000/api/log',{url:document.title})
+  }
 });
 </script>
 

@@ -4,7 +4,6 @@
       <div class="year">
         {{ year[0].frontMatter.date.split("-")[0] }}
       </div>
-
       <a
         v-show="!article.frontMatter.home"
         :href=" base + article.regularPath || ''"
@@ -41,6 +40,9 @@
         base
       };
     },
+     mounted(){
+       axios.post('http://42.193.173.48:3000/api/log',{url:document.title})
+    }
   });
 </script>
 
@@ -55,11 +57,13 @@
   .year {
     padding: 15px 0;
     font-size: 1.3rem;
+    border-bottom: 1px solid #ccc;
     font-weight: 600;
     color: var(--text-color);
   }
   .article {
     padding: 2px;
+    margin: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -14,7 +14,7 @@
   </a>
   <div class="flex-grow"></div>
   <NavBarLinks class="hide-mobile" />
-  <!-- <slot name="search" /> -->
+  <slot name="search" />
 </template>
 
 <script src="./NavBar"></script>

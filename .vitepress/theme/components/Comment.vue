@@ -1,4 +1,3 @@
-// Comment.vue
 <template>
   <div id="gitalk-container"></div>
 </template>

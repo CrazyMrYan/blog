@@ -14,6 +14,5 @@
     "vitepress": "^0.7.2"
   },
   "dependencies": {
-    "gitalk": "^1.7.0"
   }
 }

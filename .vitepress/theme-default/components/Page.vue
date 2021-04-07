@@ -7,7 +7,7 @@
       <div class="md-date">{{ pageData.frontmatter.date }}</div>
     </div>
     <ul class="catalog">
-      <li class="catalog-item" v-for="item in pageData.headers">
+      <li class="catalog-item" v-for="item in pageData.headers" :key="item">
         <a
           class="level level-2"
           v-if="item.level == 2"
@@ -153,6 +153,8 @@ export default {
 }
 .imgBox > img {
   max-height: 80%;
+  max-width: 96%;
+  min-width: 60%;
   cursor: zoom-out;
 }
 .content {
@@ -160,6 +162,7 @@ export default {
   padding: 0.025rem 2.5rem 2rem;
   /* if this is moved to a variable, add it to BuySellAds.vue */
   max-width: 50rem;
+  overflow-x: hidden;
 }
 
 .content a {
@@ -172,6 +175,13 @@ export default {
 
 .content img {
   max-width: 100%;
+}
+.content>div> p> img {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  max-width: 100%;
+      display: block;
+    margin: 0 auto;
+    border-radius: 4px;
 }
 /*
   .content div > h1:first-child, .content div > h2:first-child {
@@ -209,6 +219,8 @@ h6 {
   position: fixed;
   top: 100px;
   right: 6vw;
+  overflow: auto;
+  max-height: 80vh;
   padding-left: 12px;
 }
 .catalog-item {

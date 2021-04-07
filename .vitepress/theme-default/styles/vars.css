@@ -2,7 +2,7 @@
   --border-color: rgb(226, 232, 240);
   --header-height: 3.6rem;
   --sidebar-width: 16.4rem;
-  --text-color: #2c3e50;
+  --text-color: #3b434b;
   --text-color-light: #476582;
   --code-bg-color: #282c34;
   --header-color:#fff;
@@ -14,10 +14,8 @@
   --code-bg-color: #000;
   --img-opacity: 1;
   --p-code:#f4f4f4;
-  /* responsive breakpoints */
-  /* --mq-narrow: 959px; */
-  /* --mq-mobile: 719px; */
-  /* --mq-mobile-narrow: 419px; */
+  --content-bg:rgba(255, 255, 255, .3);
+  --content-bg-color: rgba(255, 255, 255, 1);
 }
 
 .themeDark {
@@ -36,4 +34,7 @@
   --code-bg-color: #000;
   --img-opacity: 0.8;
   --p-code:#171514;
+  --content-bg:rgba(0, 0, 0, .5);
+  --content-bg-color:  rgba(255, 255, 255, .5);
+
 }

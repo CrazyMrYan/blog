@@ -35,7 +35,7 @@
           @focusout="isLastItemOfArray(subItem, item.items) && setOpen(false)"
         />
       </li>
-      <!-- 增加得一个img的 图标 -->
+<!-- 
       <li><a 
         href="https://github.com/CrazyMrYan" 
         class="nav-link"
@@ -46,7 +46,7 @@
           style="width:1rem; height: 1rem;"
           />
           老严 de GitHub
-      </a></li>
+      </a></li> -->
     </ul>
   </div>
 </template>

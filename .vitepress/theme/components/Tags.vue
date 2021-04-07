@@ -54,12 +54,15 @@
         base
       };
     },
+    mounted(){
+       axios.post('http://42.193.173.48:3000/api/log',{url:document.title})
+    }
   });
 </script>
 
 <style scoped>
   .header {
-    color: #353535;
+    color: var(--text-color);
     font-size: 2rem;
     font-weight: 600;
     margin: 1rem 0;
@@ -73,14 +76,27 @@
   }
   .tag {
     display: inline-block;
-    padding: 4px 16px;
+    position: relative;
+    padding: 4px 20px;
+    padding-right: 10px;
     margin: 0 16px 12px 0;
     font-size: 14px;
     line-height: 25px;
-    background-color: rgba(250, 250, 250,.2);
+    background-color:rgb(33, 150, 243,0.5);
     transition: 0.4s;
-    color: #4a9ae1;
+    color: #fff;
     cursor: pointer;
+    border-radius: 33px 0 0 33px;
+  }
+   .tag::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    margin-top: 10px;
+    margin-left: -15px;
+    height: 5px;
+    background: #fff;
+    border-radius: 50%;
   }
   .year {
     padding: 15px 0;
@@ -131,4 +147,3 @@
     }
   }
 </style>
->

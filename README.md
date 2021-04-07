@@ -5,6 +5,12 @@ title: 项目概述
 describe: 项目概述
 ---
 
+![](./docs/images/5a94f43a5b2471.jpg)
+![](./docs/images/5a94f43a5b2472.jpg)
+
+## 项目地址
+[https://github.com/CrazyMrYan/blog](https://github.com/CrazyMrYan/blog)
+
 ## 🚀 基于「VitePress」搭建的极简博客
 
 现已完成:

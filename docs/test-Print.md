@@ -11,7 +11,7 @@ describe: 测试局部打印页面
 
 记住需要使用 `<!--startPrint-->` 开头，以 `<!--endPrint-->` 结尾
 
-``` js
+``` html
 # 在文章中使用
 <!--startPrint-->
 - 这是要打印的内容

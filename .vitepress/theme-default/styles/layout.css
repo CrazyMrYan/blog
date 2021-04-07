@@ -133,7 +133,7 @@ body {
 
 .theme main.home {
   padding: var(--header-height) 2rem 0;
-  max-width: 960px;
+  max-width: 1160px;
   margin: 0px auto;
   display: block;
 }

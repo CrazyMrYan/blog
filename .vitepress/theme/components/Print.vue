@@ -22,6 +22,7 @@ export default defineComponent({
   color: #2c3e50;
   line-height: 1.499;
   position: relative;
+  z-index: 2;
   display: inline-block;
   font-weight: 400;
   white-space: nowrap;

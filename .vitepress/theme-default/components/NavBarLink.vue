@@ -3,7 +3,7 @@
     <a
       class="nav-link"
       :class="classes"
-      :href="href"
+      :href="href === '/' ? '/' : href + '.html'"
       :target="target"
       :rel="rel"
       :aria-label="item.ariaLabel"
