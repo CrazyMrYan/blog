@@ -12,7 +12,7 @@
         // clientID
         clientID: "a6598e156cf30077f530",
         // clientSecret
-        clientSecret: "a5e33f61a5071999b191b5f768f837e9187693fd",
+        clientSecret: "98937aee37a93913b415f2688ad92d351c5e0c52",
         // 评论项目名
         repo: 'blog-comments',
         owner: 'crazymryan',

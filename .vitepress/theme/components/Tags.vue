@@ -18,6 +18,7 @@
       @click="toggleTag(key)"
       v-for="(item, key, index) in data"
       class="tag"
+      :key="index + key"
     >
       {{ key }}
     </span>
